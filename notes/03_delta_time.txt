@@ -1,0 +1,4 @@
+delta is always come with _process function
+
+the movement speed of our game is determined by how fast the game runs(how many frames are generated)
+slow computer and fast computer have a huge diference on this, this is a massive problem!!!

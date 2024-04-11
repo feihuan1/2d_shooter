@@ -1,0 +1,49 @@
+renderer:(can change later on if needed)(code exp in Logo.gd)
+		1 mobile is default, works for mobile and desktop, can display graphic but a littlelimited, but its perfectly fine for 2D game
+		2. forward+ is for very pretty 3D games
+		3. compatibility is for old device or browser games
+Nodes & scenes
+	1.Nodes are basic elements: a node could be an image ,a sound, a sound a timmer, a path a skeleton, an area...(there are hundreds of nodes) 
+	2.scenes use for organizes nodes and displaying nodes(a folder dis play 2D or 3D ndoes you put insides it),---you can place scenes in other scenes--Scenes are suppopsed to be logical objects(like a scount, a player, a bug, a crate, a car etc)
+	----------
+	1 node2D is mostly use for organization, will have children under it 
+	2, Sprite2D is a Node can display image
+
+GDScript basis(what diferent than python) 
+	1 DataTypes: you have all dataTypes(int, float, bool, string, dicts), No tuples and Lists(replaced by Arrays) 
+	
+	
+	2 Variables: Variables and constants 
+		var current_speed = 200 
+		const max_speed = 500 
+		
+		
+	3!!! you can change the dataType dynamically OR you can force one dataType for a variable: 
+		var a_string: String = 'test' 
+		var a_number: int = 123 
+		var switch: bool = true 
+		var some_numbers: Array[int] = [1,2,3,4] 
+		
+		
+Functions: create with func keyword, you can specify datatypes for parameters and the return value, if dont specify return value, VOID is returned like in Phython, indentation assign lines of code to a function 
+		func test_function(param_a: int, param_b: String) -> bool: 
+			return true
+
+Flow: you have if statement, while & for loops along with the comparison operators(also continue and break)
+
+Classes: 
+	A script is always added to a Node, that Node is a class with default methods and attributes
+	Add a script to a Node2D create an object with a positionm rotation, scale etc... 
+	you can use code to change these values and als add new ones 
+	
+	there are alot of inbuilt functions you will use, they all start with an _.
+		_ready() is run when a Node is added to the node tree 
+		_process() is run on every frame of the game 
+		
+	you can target other nodes in 2 ways: 
+		get_node("node path")
+				or 
+		$node path(more simplified!!!)	
+	
+Vector(x, y)// means 2 value, could use for change position
+	

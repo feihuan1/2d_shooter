@@ -1,0 +1,18 @@
+--if statement, () i optional but the damn : is a must
+	if ($Logo.rotation_degrees > 180):
+		$Logo.rotation_degrees = 10
+		
+		if $Logo.rotation_degrees > 180:
+		$Logo.rotation_degrees = 10
+
+
+
+--define array
+	var test_array: Array[String] = ["test", 'hello', "world"]
+	
+-- accesing array 
+	test_array[0]
+
+--for loop~
+	for i in test_array: 
+		print(i)
