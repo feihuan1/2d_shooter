@@ -1,0 +1,24 @@
+Problem
+currently, we are moving images only 
+images cannot collide or silide along surfaces 
+they dont have physical propertyies 
+Solution: Collisions & PhysicsBodies!!
+
+Area2D: an area that can check if another body entered | Can be moved by changing the position
+		Check if player entered a house, laser will be areas too
+		
+StaticBody2D: a static body that other bodies collide with | Not supposed to be moved 
+				Any static object: wall, beds, obstacles...
+				
+RigidBody2D: Moving body that moves via physics(like a cannonball) | Set a initial velocity 
+				the grenade
+				
+CharacterBody2D: Moving body controlled by code | Inbuild methods 
+					Any entity that controlled by code: The play & all enemies
+					when working with CharacterBody2D, use move_and_slide instead of position
+					set velocity and move_and_slide will auto pick it up
+					it automaticly includes delta
+					
+
+CollisionPolygon2D: custom shape
+CllisionShape2D: fixed shape

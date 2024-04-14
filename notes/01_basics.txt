@@ -40,10 +40,12 @@ Classes:
 		_ready() is run when a Node is added to the node tree 
 		_process() is run on every frame of the game 
 		
-	you can target other nodes in 2 ways: 
+	you can target other nodes in 3 ways: 
 		get_node("node path")
 				or 
-		$node path(more simplified!!!)	
+		$node path(more simplified!!!)	 
+				or
+		right click on node choose add uniq name-> target it with: -> %Node(name of the node)
 	
 Vector(x, y)// means 2 value, could use for change position
 	

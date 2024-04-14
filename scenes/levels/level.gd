@@ -1,24 +1,20 @@
 extends Node2D
 
-var test_array: Array[String] = ["test", 'hello', "world"]
 
-func _ready(): 
-	print('level is ready')
-# targeting node
-	get_node("Logo").rotation_degrees = 90
-	$Logo.scale = Vector2(1, 1) 
-	
-	for i in test_array: 
-		print(i)
 
-func _process(_delta):
-	$Logo.rotation_degrees += 10
-# flow -> if statement
 
-	
-	if $Logo.position.x > 1000:
-		# this get overwrited in Logo.gd so it wont work
-		#$Logo.position.x = 0 
-		# accessing variables in child node
-		# variables defined in child node perform as attributes when accessing the node
-		$Logo.pos.x = 0
+
+func _on_gate_player_entered_gate(body):
+	print('player entered gate: ', body)
+
+
+func _on_player_laser():
+	print("shoot laser")
+
+
+func _on_player_grenade():
+	print('throw grenade')
+
+
+func _on_gate_player_exited_gate(body):
+	print('player exited gate: ', body)

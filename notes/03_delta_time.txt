@@ -2,3 +2,31 @@ delta is always come with _process function
 
 the movement speed of our game is determined by how fast the game runs(how many frames are generated)
 slow computer and fast computer have a huge diference on this, this is a massive problem!!!
+
+speeds(pixels per frame)         frame per second              total movement(per second)
+10px                                   30                           10*30 = 300
+10px								   60							60*10 = 300
+10px								   120							120*10 = 1200
+
+speed of movement will be huge diference base on computer frame rate
+including charactor speed, enemy movements ...., its like cheat code enabled
+
+the game will run inconsistently on diferent systems 
+since some scene are harder(bigger map) to render than others, it might even run inconsistently on same system!!!
+
+				solution: Delta time
+delta time measures how long it took to create one frame 
+for exp: if the framerate is 60 fps, 
+delta time is 1s/60 = 0.0167s 
+this infomation we can use to keep the same at a constant speed regardless of framerate 
+We just need multiply any movement with delta time
+
+
+speeds		    frame per second    Delta time    original movement  Delta movements
+(pixels/frame)						(seconds)	    (per second)	 (per second)
+10px            30                  1/30=0.033     10*30 = 300		 10*30*0.033= 10
+10px			60					1/60=0.017	   60*10 = 300		 10*60*0.017= 10
+10px			120					1/120=0.008    120*10 = 1200	 10*120*0.008= 10
+
+with delta accounted, the game runs at same speed at any framerate!
+Problem solved!!!

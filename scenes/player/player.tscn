@@ -1,19 +1,29 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxj6tatsod5e"]
 
 [ext_resource type="Texture2D" uid="uid://c85u0k4xsk832" path="res://graphics/player/player.png" id="1_wv3re"]
-[ext_resource type="Texture2D" uid="uid://dfevx14uj80dc" path="res://graphics/projectiles/blue.png" id="2_2t3jf"]
-[ext_resource type="Texture2D" uid="uid://ekf37l0lga1i" path="res://graphics/projectiles/grenade.png" id="3_m00kr"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="3_3cajd"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cl3yi"]
+radius = 65.123
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("3_3cajd")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
+position = Vector2(2, -33)
 texture = ExtResource("1_wv3re")
 
-[node name="LaserImage" type="Sprite2D" parent="PlayerImage"]
-position = Vector2(20, -202)
-texture = ExtResource("2_2t3jf")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_cl3yi")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-120, -199)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_m00kr")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="GrenadeReloadTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]

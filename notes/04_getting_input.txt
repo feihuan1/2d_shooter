@@ -1,0 +1,8 @@
+two step to get input
+1. create an input map(happen in project setting)
+	this look for possible inputs and makes them accessible in the gamr 
+	for exp: we can get left key and "A" key and joy-stick left store them all under left key 	in the input map
+step: project on top bar -> project setting -> input map ->add new action -> type a name -> bind a key by press keyboard
+	
+2. access the input (happen in code)
+	Godot has an Input object that can check various inputs
