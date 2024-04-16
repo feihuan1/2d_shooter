@@ -1,0 +1,6 @@
+			you can create your own signals 
+the major limitation of signals is that they only work between nodes in the same scene
+1. define a signal using signal keywork like var in child scene (signal player_enter)
+2. connect a signal with any type and emit the custom signal inside the signal function (player_enter.emit())
+3. in parent scene, the child scene will have a custom signal under script,
+4, write the function about what u want do with it

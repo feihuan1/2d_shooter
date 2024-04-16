@@ -1,0 +1,35 @@
+so far, we created scenes in editor, 
+
+but this isn't always possible in a game! 
+for exp: the lasers are also a scene
+but one that is dynamically genarated(create only when shooting)
+ 3 step 
+1. we need to create a scene (use simple node as possible)
+2. we need to create an instance of the scene  
+			define a scene use scene: PackedScene = preload(path)
+			create instance in function using var instance =  scene.instanitate()
+3. we need to add the scene to the node tree 
+			run build in function targetNode.add_child(instance) 
+			update laser position tobe in front of layer
+
+* use remote debug on adding nodes dynamically
+
+
+** in player , create 3 marker under laserStartPositions Node2D 
+	get all start point: var laser_markers = $LaserStartPoints.getChildren() -> Array
+		var selected_laser = laser_markers[randi() % laser_markers.size()] # ramdom [0, 2]
+		can_laser = false 
+		$Timer.start()
+		laser.emit(selected_laser.global_position) #emit signal with laser position (signal laser(pos), can access in signal function through param(pos)
+
+----position vs globle_position!!!
+position is a local position: they are relative to the parrent 
+
+globel positions are an exact pixel coordinate that is independent from any parent
+
+imagin you are in your house: you have some relative position to the center of the house(local position) but you still have a specific GPS location(global position) 
+
+you can add a Node2D with an offset ofx:100 and y:200 and give it a child on the same position 
+the child will have a local position of x:0 and y: 0 but global position of x: 100 and y: 200
+
+@export var , add a section to Inspector
