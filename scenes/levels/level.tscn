@@ -12,6 +12,10 @@ script = ExtResource("1_qg0sy")
 [node name="Player" parent="." instance=ExtResource("4_ytuj2")]
 position = Vector2(532, 558)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+
 [node name="Gate" parent="." instance=ExtResource("3_0cr3p")]
 position = Vector2(532, -579)
 

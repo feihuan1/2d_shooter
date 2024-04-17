@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-signal laser(pos)
-signal grenade(pos)
+signal laser(pos, direction)
+signal grenade(pos, direction)
 
 var can_laser: bool = true
 var can_grenade: bool = true
@@ -11,8 +11,10 @@ func _process(_delta):
 	var direction = Input.get_vector("left","right","up", "down")
 	velocity = direction * 500
 	move_and_slide() 
-	
-	
+# rotate 
+	look_at(get_global_mouse_position())
+
+	var player_direction = (get_global_mouse_position() - position).normalized()
 	#laser shooting input 
 #action keep triger when pressed down
 	if Input.is_action_pressed("primary action") and can_laser:  
@@ -22,15 +24,16 @@ func _process(_delta):
 		can_laser = false 
 		$Timer.start()
 #emit the position we selected
-		laser.emit(selected_laser.global_position)
+		laser.emit(selected_laser.global_position, player_direction)
 	
 #action JUST triger once
 	if Input.is_action_just_pressed("secondary action") and can_grenade:
-		
 		can_grenade = false	
 		$GrenadeReloadTimer.start() 
-		var pos = $LaserStartPositions.get_children()[0].global_position
-		grenade.emit(pos)
+		var pos = $LaserStartPositions.get_children()[0].global_position 
+#calculate the angle of mouse from 0
+		
+		grenade.emit(pos, player_direction)
 
 
 func _on_timer_timeout():

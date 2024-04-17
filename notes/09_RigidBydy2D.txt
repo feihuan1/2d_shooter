@@ -1,0 +1,14 @@
+Rigidbydy2D have a gravity setting thats 1 by default!! 
+
+you can set physics behaviour in the inspector and additional options are set via PhysicsMaterial(friction, bouncing¸) 
+
+you are ONLY supposed to set a starting velocity, the movements is then influenced by physics
+
+---- look_at(get_global_mouse_position()) make the player look at mouse(default mouse is at right, rotate the image to face right)
+---var player_direction = (get_global_mouse_position() - position).normalized() 
+	this give how far is mouse from player in x and y axis
+	mouse position - player position is the direction of player, and need normalize
+	normalize will get only direction, not distance, so when multiply speed, it will 	be same out come
+---laser.rotation_degrees = rad_to_deg(direction.angle())  this is how to get direction in area2D
+	any Vector has .angle method, it converts Vector to a angle 
+	rad_to_deg converts radium to degrees

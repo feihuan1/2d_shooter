@@ -11,18 +11,18 @@ func _on_gate_player_entered_gate(body):
 func _on_gate_player_exited_gate(body):
 	print('player exited gate: ', body)
 
-func _on_player_laser(pos):
-	var laser = laser_scene.instantiate()   
-# 1. update laser position 
-	laser.position = pos
-# 2. move the laser 
-# 3. add laser instance to a Node2D
+func _on_player_laser(pos, direction):
+	var laser = laser_scene.instantiate() as Area2D
+	laser.position = pos 
+	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
+	laser.direction = direction
 	$Projectiles.add_child(laser)
 
 
-func _on_player_grenade(pos):
-	var grenade = grenade_scene.instantiate() 
-	grenade.position = pos 
+func _on_player_grenade(pos, direction):
+	var grenade = grenade_scene.instantiate() as RigidBody2D
+	grenade.position = pos  
+	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
 	
 
