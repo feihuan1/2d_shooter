@@ -1,0 +1,5 @@
+Particales are small objects that are dynamically generated, 
+for exp: we ca use them to create smoke(create lot of small dots and combine them will look like smoke) or some visuals when a laser shot.
+
+CPUParticles2D -> for mobile and broswer
+GPUParticles2D -> for computer, more powerful, use for when create a lots of particals(not all divice have GPU: mobile browser ususally dont)

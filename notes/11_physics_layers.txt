@@ -1,0 +1,19 @@
+Every CollisionObject has a collision layer 
+
+you can place objects on layers to make them interact with objects on other layers
+
+this is dont with layer and mask 
+
+"layer" determines on witch layer the object itself is 
+
+"Mask" determines which layers it can interact with 
+exp: 
+	Layers: Player, Enemies, Objects, Projectiles, Items and Zones 
+		the Player scene is on the Player layer and the mask can interact with all other layers
+		each Enemy scene will be on the enemies layer and the mask will be for the player, object and the projectiles, Not OTHER ENEMIES or ITEM & ZONES 
+		set physics layer name in project setting
+
+-- Tilemap
+	inspector -> tileset -> paint -> click image -> draw colision shape
+	(click three dot above editor, select flip for faster development)
+	draw area with gap can lead to stucking bug in game, be very precise please!!!

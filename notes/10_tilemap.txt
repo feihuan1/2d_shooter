@@ -1,0 +1,17 @@
+We want decorate the level with images! 
+
+the easiest way is to simply place Sprites. you can modify things substantially by changing the color and scale values
+
+repeat image
+region -> select -> testure -> repeat -> enabled
+
+change color
+visibility -> modulate(be inheritated with children) -> self modulate(not inherable)
+
+for complex setups, you want use a Tilemap!
+
+Tile -> a single graphic 
+Tileset -> a combination of tiles 
+Tilemap -> a godot Node that organizes tilesets(can contain signle or multiple tilesets)
+
+tilemap can have multiple layer!!!

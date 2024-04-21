@@ -9,7 +9,7 @@ var can_grenade: bool = true
 func _process(_delta): 
 #this gives a vector of each direction
 	var direction = Input.get_vector("left","right","up", "down")
-	velocity = direction * 500
+	velocity = direction * 1000
 	move_and_slide() 
 # rotate 
 	look_at(get_global_mouse_position())
@@ -19,6 +19,7 @@ func _process(_delta):
 #action keep triger when pressed down
 	if Input.is_action_pressed("primary action") and can_laser:  
 #ramdomly seclect marker2D for laser
+		$GPUParticles2D.emitting = true
 		var laser_markers = $LaserStartPositions.get_children() 
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
 		can_laser = false 
