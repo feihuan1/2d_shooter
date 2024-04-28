@@ -1,0 +1,16 @@
+Animation work by playing images in sequens
+	but images can be 2 format: 
+				as separate images or in a spritesheet
+
+Godot can cover both 
+separate images: AnimatedSprite2D 
+spritesheet: Srite2D(it has an animation tab)
+
+
+			AnimationPlayer 
+it plays an animation 
+By animation we mean any kind of change in property 
+(move, rotation, animation frames, light energy etc) 
+
+you can also call methods 
+and you get alot of control over these changes

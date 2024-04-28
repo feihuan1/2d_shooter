@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxj6tatsod5e"]
+[gd_scene load_steps=7 format=3 uid="uid://cxj6tatsod5e"]
 
 [ext_resource type="Texture2D" uid="uid://c85u0k4xsk832" path="res://graphics/player/player.png" id="1_wv3re"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="3_3cajd"]
@@ -14,9 +14,16 @@ scale_min = 1.5
 scale_max = 2.5
 color = Color(0.745098, 1, 0.996078, 1)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ly58b"]
+polygon = PackedVector2Array(-40, -47, -33, -48, -31, -45, -26, -53, -17, -56, -14, -57, 0, -59, 7, -58, 10, -58, 20, -61, 26, -59, 35, -49, 38, -44, 44, -40, 47, -29, 59, -25, 75, -10, 86, -11, 95, -5, 108, -2, 112, 3, 119, 3, 124, 4, 130, 9, 134, 16, 133, 28, 129, 33, 125, 34, 122, 37, 115, 37, 109, 36, 104, 40, 101, 43, 97, 45, 95, 53, 65, 53, 61, 51, 58, 48, 57, 43, 48, 40, 42, 41, 31, 46, 20, 48, 14, 53, 5, 57, -3, 60, -7, 59, -20, 60, -27, 58, -32, 56, -36, 52, -38, 45, -40, 41, -43, 36, -45, 32, -54, 23, -53, 19, -53, 16, -58, 10, -61, 0, -61, -21, -55, -31, -52, -38, -48, -44)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("3_3cajd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_cl3yi")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -43,10 +50,6 @@ position = Vector2(36, 1)
 rotation = 1.5708
 texture = ExtResource("1_wv3re")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
-shape = SubResource("CircleShape2D_cl3yi")
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(131, 20)
 emitting = false
@@ -56,6 +59,9 @@ texture = ExtResource("3_hrhg4")
 lifetime = 0.05
 one_shot = true
 speed_scale = 2.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ly58b")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
