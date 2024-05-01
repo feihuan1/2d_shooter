@@ -10,6 +10,8 @@ radius = 89.4539
 colors = PackedColorArray(0.714212, 0.714212, 0.714212, 0.54902, 0.625597, 0.625597, 0.625597, 0)
 
 [node name="SteamVent" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2jrbx")

@@ -1,0 +1,17 @@
+We can animate any property using an AnimationPlayer
+but sometimes we just want a simple animation 
+(zooming in with a camera, updating the postion, hcanging the transparency) 
+Having an animationPlayer for that is overkill 
+For thay, we have tweens!!!
+
+Tweens are not a node(used to be earlier versions) 
+
+They are an object you create in the script of a node 
+and then this tween object can interpolate between 2 values 
+
+for example: rotation 
+
+start: 0, End: 100, Duration: 1s
+
+	var tween = get_tree().create_tween() or var tween = create_tween()
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(1, 1), 1)

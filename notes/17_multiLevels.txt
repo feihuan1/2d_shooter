@@ -1,0 +1,20 @@
+You just have to create more level scenes 
+but it is not that easy
+
+our level contains quite a bit of code. if we created other level scenes this logic would not be available
+we could copy it but that would be very inefficient
+
+instead we use 		Inheritance
+we want create a parent level scene that contains all the logic
+all other level scenes inherit from that 
+
+go to top left scene -> new inherited scene -> choose a scene
+
+what ever changed in parent, the child will change too 
+yellow nodes in Scene tree means its been inherited from parent
+
+also you might want inherite script
+in parent script, create class name className LevelParent 
+in child, instead extends Node2D, extends LevelParent
+
+need reconnect single!!!!

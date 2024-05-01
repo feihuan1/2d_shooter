@@ -1,0 +1,12 @@
+the laser should disappear when colliding with a wall/object 
+if it collides with an enemy it should rigger a function 
+
+finnally, it should disappear after a certain amount of time (queue_free())
+that way, we cannot have infinite laser
+
+if(body.has_method("hit")):
+		body.hit()
+	or
+if "hit" in body: 
+	body.hit()
+use has_method t check if a node has this func(use on enemy)
