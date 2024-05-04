@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ceosuyjweyjml"]
+[gd_scene load_steps=4 format=3 uid="uid://ceosuyjweyjml"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_qg0sy"]
+[ext_resource type="PackedScene" uid="uid://d4feejh87jpab" path="res://scenes/user interface/ui.tscn" id="3_6cy7q"]
 [ext_resource type="PackedScene" uid="uid://cxj6tatsod5e" path="res://scenes/player/player.tscn" id="4_ytuj2"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qg0sy")
 
 [node name="Ground" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Ground"]
+format = 2
 
 [node name="Projectiles" type="Node2D" parent="."]
 
@@ -16,6 +20,10 @@ position = Vector2(532, 558)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("3_6cy7q")]
 
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]

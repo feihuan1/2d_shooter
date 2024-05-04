@@ -1,0 +1,9 @@
+To change the level we need to load another scene 
+This is trivial in Godot 
+But the transition will be a hard cut(instant change)
+	get_tree().change_scene_to_file("res://scenes/levels/outside.tscn")
+						or 
+	var outside_level_scene: PackedScene = preload("res://scenes/levels/outside.tscn")
+	get_tree().change_scene_to_packed(outside_level_scene)
+second approach can use @export make it easier to choose multiple exit of map
+We need use an AnimationPlayer to add a proper transition

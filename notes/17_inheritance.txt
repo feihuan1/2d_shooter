@@ -17,4 +17,4 @@ also you might want inherite script
 in parent script, create class name className LevelParent 
 in child, instead extends Node2D, extends LevelParent
 
-need reconnect single!!!!
+need reconnect single!

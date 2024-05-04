@@ -1,0 +1,28 @@
+There are 4 kinds of Nodes 
+2D - BLUE
+3D - RED 
+Control - green 
+other - white
+
+UI -> Control Nodes 
+lables, images, progress bars, buttons, area with colors, text input, graphs, menu, videos
+
+!!!!!!!
+2D nodes are places via pexel positions, 
+Control Nodes work via anchors and container
+
+diference between a textureRect and a sprite2D is TextureRect has anchor!!!
+
+!!!!!!!!!!!
+CanvasLayer will follow the camera, stick to the user screen
+
+There are two way to place a control node 
+
+Anchor and cotainers 
+
+Anchors are the green needles in the topleft of a control node
+
+Containers are parent node that determine the position of their children
+
+(you can also use x and y properties or drag the Control node to the position you want but thay is almost never a good idea)
+-> thats the absolute position, if resize the screen, if stays the same position absolute based on how many pixels from x and y , this break the UI 

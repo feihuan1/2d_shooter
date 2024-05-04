@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dk2riqsb74he7"]
+[gd_scene load_steps=19 format=3 uid="uid://dk2riqsb74he7"]
 
 [ext_resource type="PackedScene" uid="uid://ceosuyjweyjml" path="res://scenes/levels/level.tscn" id="1_hae1l"]
 [ext_resource type="PackedScene" uid="uid://dtp82c868rrll" path="res://scenes/objects/gate.tscn" id="2_26ft3"]
@@ -15,8 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://d22d8uekfbfae" path="res://scenes/houses/house.tscn" id="11_3vjh7"]
 [ext_resource type="PackedScene" uid="uid://c3jfv51rhvbt1" path="res://scenes/objects/steam_vent.tscn" id="12_ch67r"]
 [ext_resource type="PackedScene" uid="uid://criiv1xakqyoh" path="res://scenes/objects/light_fan_animation.tscn" id="13_q3b6k"]
-[ext_resource type="PackedScene" uid="uid://cvt4ly6661o26" path="res://scenes/container/crate.tscn" id="16_pyyu7"]
-[ext_resource type="PackedScene" uid="uid://7eodccfc7psa" path="res://scenes/container/toilet.tscn" id="17_5egs4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mckba"]
 resource_name = "wals"
@@ -67,7 +65,7 @@ self_modulate = Color(0.968627, 1, 0.913725, 0.898039)
 position = Vector2(-254, 943)
 texture = ExtResource("3_mhyyf")
 
-[node name="TileMap" type="TileMap" parent="Ground" index="2"]
+[node name="TileMap2" type="TileMap" parent="Ground" index="2"]
 tile_set = SubResource("TileSet_d6lhc")
 format = 2
 layer_0/name = "Soil"
@@ -96,7 +94,7 @@ position = Vector2(3925, -20)
 texture = ExtResource("10_iqa6b")
 
 [node name="House" parent="Ground" index="8" instance=ExtResource("11_3vjh7")]
-position = Vector2(-316, 3338)
+position = Vector2(-1783, 3967)
 rotation = -2.54818
 
 [node name="SteamVent" parent="Ground" index="9" instance=ExtResource("12_ch67r")]
@@ -104,17 +102,14 @@ position = Vector2(-79, 499)
 
 [node name="lightFanAnimation" parent="Ground" index="10" instance=ExtResource("13_q3b6k")]
 position = Vector2(-1238, 1279)
-autoplay = "default"
 frame_progress = 0.299954
 
 [node name="Gate" parent="." index="1" instance=ExtResource("2_26ft3")]
 position = Vector2(610, -564)
 rotation = 0.00781638
 
-[node name="Box" parent="." index="2" instance=ExtResource("16_pyyu7")]
-position = Vector2(1314, 800)
-
-[node name="Toilet" parent="." index="3" instance=ExtResource("17_5egs4")]
-position = Vector2(798, 924)
+[node name="Player" parent="." index="3"]
+z_index = 10
+position = Vector2(651, 581)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

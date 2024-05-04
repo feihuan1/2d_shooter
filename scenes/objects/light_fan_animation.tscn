@@ -205,7 +205,8 @@ animations = [{
 [node name="lightFanAnimation" type="AnimatedSprite2D"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bqgt3")
-frame_progress = 0.512439
+autoplay = "default"
+frame_progress = 0.324017
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 1.5

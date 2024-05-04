@@ -1,0 +1,6 @@
+We mostly reuse the Tilemap to build the 2nd level 
+The only thing to cover is how to use a tileset across multiple tilemaps
+(so we dont have to re-draw shapes)
+
+go to any scene has the tilemap -> click dropdown in tileset at inspector-> save as 
+go to the scene want use the tileset, drap the saved tile set in tileset at inspector
