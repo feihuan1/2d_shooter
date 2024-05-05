@@ -9,6 +9,7 @@ var can_grenade: bool = true
 @export var max_speed: int = 1000 
 var speed: int = max_speed
 
+
 func _process(_delta): 
 #this gives a vector of each direction
 	var direction = Input.get_vector("left","right","up", "down")
@@ -20,7 +21,8 @@ func _process(_delta):
 	var player_direction = (get_global_mouse_position() - position).normalized()
 	#laser shooting input 
 #action keep triger when pressed down
-	if Input.is_action_pressed("primary action") and can_laser:  
+	if Input.is_action_pressed("primary action") and can_laser and Globals.laser_amount > 0:
+		Globals.laser_amount -= 1  
 #ramdomly seclect marker2D for laser
 		$GPUParticles2D.emitting = true
 		var laser_markers = $LaserStartPositions.get_children() 
@@ -31,7 +33,8 @@ func _process(_delta):
 		laser.emit(selected_laser.global_position, player_direction)
 	
 #action JUST triger once
-	if Input.is_action_just_pressed("secondary action") and can_grenade:
+	if Input.is_action_just_pressed("secondary action") and can_grenade and Globals.grenade_amount > 0: 
+		Globals.grenade_amount -= 1
 		can_grenade = false	
 		$GrenadeReloadTimer.start() 
 		var pos = $LaserStartPositions.get_children()[0].global_position 

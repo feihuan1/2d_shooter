@@ -1,0 +1,3 @@
+we will use a CanvasLayer, a ColorRect and an animationPlayer to create the transition
+
+the resulting scene will be autoloaded so we can access it easily

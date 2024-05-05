@@ -1,0 +1,15 @@
+when the player is shooting a laser we want to reduce the laser by 1
+
+this means we need a laser variable in 2 scenes: the player and the UI 
+
+for more complex game we might even want it in more scenes (upgrade menu, store) 
+
+hence, laser and grenades need to be accessible everywhere
+
+					Autoload 
+it automatically loads a scene or a script into every single scene 
+that wa you can store and access infomation globally 
+
+we will use that for the laser and grenade 
+
+later on this will also store the player position

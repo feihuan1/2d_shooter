@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4feejh87jpab"]
+[gd_scene load_steps=8 format=3 uid="uid://d4feejh87jpab"]
 
 [ext_resource type="Texture2D" uid="uid://dwudm170nfdof" path="res://graphics/ui/bullet.png" id="1_56vkg"]
+[ext_resource type="Script" path="res://scenes/user interface/ui.gd" id="1_70d82"]
 [ext_resource type="FontFile" uid="uid://dj0cnbf6wcyaa" path="res://graphics/ui/subatomic.tsoonami.ttf" id="2_744cp"]
 [ext_resource type="Texture2D" uid="uid://c1o4cew01hb3k" path="res://graphics/ui/grenade.png" id="3_vyblp"]
 [ext_resource type="Texture2D" uid="uid://bhukrvt0yjaat" path="res://graphics/ui/progress_bar/bg.png" id="4_dan6x"]
@@ -11,6 +12,7 @@ default_font = ExtResource("2_744cp")
 default_font_size = 25
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_70d82")
 
 [node name="LaserCounter" type="Control" parent="."]
 layout_mode = 3
@@ -67,7 +69,7 @@ custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 size_flags_vertical = 0
 theme = SubResource("Theme_ql6g4")
-text = "20"
+text = "8"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="GenadeCounter/VBoxContainer"]
