@@ -1,0 +1,5 @@
+Item: 
+	an item(scene) that gets a random value: 
+		 it is updating health, lasers or grenades 
+		
+depending on the choice it will get a different color

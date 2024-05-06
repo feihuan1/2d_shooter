@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 signal laser(pos, direction)
-signal grenade(pos, direction)
+signal grenade(pos, direction) 
+
 
 var can_laser: bool = true
 var can_grenade: bool = true 
@@ -46,7 +47,6 @@ func _process(_delta):
 func _on_timer_timeout():
 	can_laser = true
 
-
-
 func _on_grenade_reload_timer_timeout():
 	can_grenade = true
+

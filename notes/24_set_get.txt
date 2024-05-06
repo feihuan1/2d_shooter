@@ -1,0 +1,9 @@
+Currently, we are updating the player stats and then update the UI 
+
+but this is getting complex fast(cross scene, signals)
+
+What would be much better is to have some code that updates the UI automatically once any player stat changes(from Globals)
+
+Set Get: 
+	it allows us to run code whenever the value of a variable changed or accessed 
+	for exp: whenever the health of the player changes we want to update the UI from the Globals
