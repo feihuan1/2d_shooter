@@ -1,0 +1,4 @@
+so far the grenade only explode 
+But they dont damage anything 
+meaning they dont call the hit function 
+Important for this one: as long as the grenade is explodingm it should trigger the hit function

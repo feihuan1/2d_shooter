@@ -1,0 +1,9 @@
+We only have a single item that we place manually 
+it would be better to have items spawned when shooting at crates and toilets
+
+there are many crates in game, if we emit connct one by one to the level, it will be disaster
+				Groups 
+any node or scene can be added to a group 
+via this group you can target it from anywhere in the game and connect a signal or run a function
+access: 
+get_tree().get_nodes_in_group("Container")

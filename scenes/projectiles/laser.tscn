@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://scenes/projectiles/laser.gd" id="1_yc0lt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3v35j"]
-height = 168.0
+height = 82.0
 
 [node name="Laser" type="Area2D"]
 collision_layer = 8
-collision_mask = 6
+collision_mask = 7
 script = ExtResource("1_yc0lt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,10 +16,11 @@ texture = ExtResource("1_l2fho")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -43)
 shape = SubResource("CapsuleShape2D_3v35j")
-metadata/_edit_lock_ = true
 
 [node name="SelfDestructTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

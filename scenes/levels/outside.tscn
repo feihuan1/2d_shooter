@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dk2riqsb74he7"]
+[gd_scene load_steps=21 format=3 uid="uid://dk2riqsb74he7"]
 
 [ext_resource type="PackedScene" uid="uid://ceosuyjweyjml" path="res://scenes/levels/level.tscn" id="1_hae1l"]
 [ext_resource type="PackedScene" uid="uid://dtp82c868rrll" path="res://scenes/objects/gate.tscn" id="2_26ft3"]
@@ -15,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://d22d8uekfbfae" path="res://scenes/houses/house.tscn" id="11_3vjh7"]
 [ext_resource type="PackedScene" uid="uid://c3jfv51rhvbt1" path="res://scenes/objects/steam_vent.tscn" id="12_ch67r"]
 [ext_resource type="PackedScene" uid="uid://criiv1xakqyoh" path="res://scenes/objects/light_fan_animation.tscn" id="13_q3b6k"]
-[ext_resource type="PackedScene" uid="uid://bycwuveeyrrwc" path="res://scenes/items/item.tscn" id="16_c8pi4"]
+[ext_resource type="PackedScene" uid="uid://ckq8u6r2gmbgr" path="res://scenes/enimies/scout.tscn" id="16_ry14y"]
+[ext_resource type="PackedScene" uid="uid://cvt4ly6661o26" path="res://scenes/container/crate.tscn" id="17_5d6h0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mckba"]
 resource_name = "wals"
@@ -54,12 +55,21 @@ sources/1 = SubResource("TileSetAtlasSource_r322b")
 [node name="Outside" instance=ExtResource("1_hae1l")]
 script = ExtResource("2_k1x4w")
 
+[node name="Gate" parent="." index="1" instance=ExtResource("2_26ft3")]
+position = Vector2(610, -564)
+rotation = 0.00781638
+metadata/_edit_lock_ = true
+
+[node name="Ground" parent="." index="2"]
+z_index = -1
+
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
 position = Vector2(616, 934)
 texture = ExtResource("2_t04cf")
 region_enabled = true
 region_rect = Rect2(-6080.65, -3068, 16000, 10000)
+metadata/_edit_lock_ = true
 
 [node name="Decoration" type="Sprite2D" parent="Ground" index="1"]
 self_modulate = Color(0.968627, 1, 0.913725, 0.898039)
@@ -98,22 +108,34 @@ texture = ExtResource("10_iqa6b")
 position = Vector2(-1783, 3967)
 rotation = -2.54818
 
-[node name="SteamVent" parent="Ground" index="9" instance=ExtResource("12_ch67r")]
-position = Vector2(-79, 499)
-
-[node name="lightFanAnimation" parent="Ground" index="10" instance=ExtResource("13_q3b6k")]
-position = Vector2(-1238, 1279)
+[node name="lightFanAnimation" parent="Ground/House" index="8" instance=ExtResource("13_q3b6k")]
+position = Vector2(1869.68, 1083.77)
+rotation = 2.54818
 frame_progress = 0.299954
 
-[node name="Gate" parent="." index="1" instance=ExtResource("2_26ft3")]
-position = Vector2(610, -564)
-rotation = 0.00781638
+[node name="SteamVent" parent="Ground" index="9" instance=ExtResource("12_ch67r")]
+position = Vector2(-243, 914)
 
-[node name="Player" parent="." index="3"]
+[node name="Projectiles" parent="." index="5"]
+metadata/_edit_lock_ = true
+
+[node name="Scout" parent="Enemies" index="0" instance=ExtResource("16_ry14y")]
+position = Vector2(-929, 789)
+
+[node name="Player" parent="." index="7"]
 z_index = 10
 position = Vector2(651, 581)
+metadata/_edit_lock_ = true
 
-[node name="Item" parent="." index="6" instance=ExtResource("16_c8pi4")]
-position = Vector2(260, 590)
+[node name="Lights" parent="." index="8"]
+metadata/_edit_lock_ = true
+
+[node name="Crate" parent="." index="10" instance=ExtResource("17_5d6h0")]
+position = Vector2(261, 443)
+
+[node name="Crate2" parent="." index="11" instance=ExtResource("17_5d6h0")]
+position = Vector2(922, 422)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
