@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dk2riqsb74he7"]
+[gd_scene load_steps=20 format=3 uid="uid://dk2riqsb74he7"]
 
 [ext_resource type="PackedScene" uid="uid://ceosuyjweyjml" path="res://scenes/levels/level.tscn" id="1_hae1l"]
 [ext_resource type="PackedScene" uid="uid://dtp82c868rrll" path="res://scenes/objects/gate.tscn" id="2_26ft3"]
@@ -15,8 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d22d8uekfbfae" path="res://scenes/houses/house.tscn" id="11_3vjh7"]
 [ext_resource type="PackedScene" uid="uid://c3jfv51rhvbt1" path="res://scenes/objects/steam_vent.tscn" id="12_ch67r"]
 [ext_resource type="PackedScene" uid="uid://criiv1xakqyoh" path="res://scenes/objects/light_fan_animation.tscn" id="13_q3b6k"]
-[ext_resource type="PackedScene" uid="uid://ckq8u6r2gmbgr" path="res://scenes/enimies/scout.tscn" id="16_ry14y"]
-[ext_resource type="PackedScene" uid="uid://cvt4ly6661o26" path="res://scenes/container/crate.tscn" id="17_5d6h0"]
+[ext_resource type="PackedScene" uid="uid://c004oxka341cy" path="res://scenes/enimies/bug.tscn" id="16_188bh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mckba"]
 resource_name = "wals"
@@ -119,8 +118,8 @@ position = Vector2(-243, 914)
 [node name="Projectiles" parent="." index="5"]
 metadata/_edit_lock_ = true
 
-[node name="Scout" parent="Enemies" index="0" instance=ExtResource("16_ry14y")]
-position = Vector2(-929, 789)
+[node name="Bug" parent="Enemies" index="0" instance=ExtResource("16_188bh")]
+position = Vector2(-159, 1154)
 
 [node name="Player" parent="." index="7"]
 z_index = 10
@@ -129,12 +128,6 @@ metadata/_edit_lock_ = true
 
 [node name="Lights" parent="." index="8"]
 metadata/_edit_lock_ = true
-
-[node name="Crate" parent="." index="10" instance=ExtResource("17_5d6h0")]
-position = Vector2(261, 443)
-
-[node name="Crate2" parent="." index="11" instance=ExtResource("17_5d6h0")]
-position = Vector2(922, 422)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]

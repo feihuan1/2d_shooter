@@ -1,0 +1,39 @@
+Make the Scout light up 
+
+if the scout (or the player) is hit there will be a change in health
+
+But that isn't communicated so the player wouldn't know what is happenning
+
+so we want to make the scout flash for a short time after being hit 
+
+for that we will need a new topic: Shaders!
+
+shaders determine how elements are displayed in the game
+
+	Resource(original inage)  -> game
+			godot logo			can display exact same imafe
+								Display every pixel as white(get a white squar of image)
+								Display every pixel as white and keep original alpha values
+								(get a white rounded corner image)
+		
+		shader can change in real time: 
+			the color of a pixel 
+			the transparency of a pixel 
+			the position of a pixel
+		
+you can also change value dynamically to create movement or color changes
+		
+shaders are advanced
+We are not using GDScript 
+Godot has a C-like shading language 
+you must be strict with datatypes 
+add semicolons after every line 
+
+Since we run code for every pixel of a graphic
+we dont get something like print, This makes debugging much harder.
+
+on sprite2D -> inspector -> canvasItem -> Material -> new shader meterial -> click on box -> new shader
+
+avoid if statement, bad performence!!! 
+
+uniform make variable in gdshader accessable in gdScript

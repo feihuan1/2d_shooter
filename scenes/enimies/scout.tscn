@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckq8u6r2gmbgr"]
+[gd_scene load_steps=7 format=3 uid="uid://ckq8u6r2gmbgr"]
 
 [ext_resource type="Script" path="res://scenes/enimies/scout.gd" id="1_ltygr"]
 [ext_resource type="Texture2D" uid="uid://d3cmo7io2w753" path="res://graphics/enemies/scout.png" id="1_y3d33"]
+[ext_resource type="Shader" path="res://scenes/enimies/scout.gdshader" id="2_rhk1x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ww5xw"]
 radius = 53.3385
@@ -9,16 +10,16 @@ radius = 53.3385
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ppw8"]
 radius = 1226.9
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2w2a7"]
+shader = ExtResource("2_rhk1x")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+
 [node name="Scout" type="CharacterBody2D" groups=["Entity", "Scouts"]]
 z_index = 6
 collision_layer = 2
 collision_mask = 11
 script = ExtResource("1_ltygr")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(39, 28)
-rotation = 1.5708
-texture = ExtResource("1_y3d33")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ww5xw")
@@ -41,8 +42,14 @@ position = Vector2(115, -25)
 one_shot = true
 
 [node name="DamageCoolDown" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2w2a7")
+position = Vector2(39, 28)
+rotation = 1.5708
+texture = ExtResource("1_y3d33")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

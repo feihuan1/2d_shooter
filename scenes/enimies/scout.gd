@@ -13,7 +13,8 @@ func hit():
 	if can_damage:
 		health -= 10 
 		can_damage = false
-		$DamageCoolDown.start()
+		$DamageCoolDown.start() 
+		$Sprite2D.material.set_shader_parameter("progress", 1)
 		
 	if(health <= 0): 
 		queue_free()
@@ -45,3 +46,4 @@ func _on_laser_cool_down_timeout():
 
 func _on_damage_cool_down_timeout():
 	can_damage = true
+	$Sprite2D.material.set_shader_parameter("progress", 0)
