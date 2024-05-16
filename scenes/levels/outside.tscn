@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d22d8uekfbfae" path="res://scenes/houses/house.tscn" id="11_3vjh7"]
 [ext_resource type="PackedScene" uid="uid://c3jfv51rhvbt1" path="res://scenes/objects/steam_vent.tscn" id="12_ch67r"]
 [ext_resource type="PackedScene" uid="uid://criiv1xakqyoh" path="res://scenes/objects/light_fan_animation.tscn" id="13_q3b6k"]
-[ext_resource type="PackedScene" uid="uid://c004oxka341cy" path="res://scenes/enimies/bug.tscn" id="16_188bh"]
+[ext_resource type="PackedScene" uid="uid://du73qmoxkpqd1" path="res://scenes/enimies/drone.tscn" id="16_xf0js"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mckba"]
 resource_name = "wals"
@@ -118,8 +118,8 @@ position = Vector2(-243, 914)
 [node name="Projectiles" parent="." index="5"]
 metadata/_edit_lock_ = true
 
-[node name="Bug" parent="Enemies" index="0" instance=ExtResource("16_188bh")]
-position = Vector2(-159, 1154)
+[node name="Drone" parent="Enemies" index="0" instance=ExtResource("16_xf0js")]
+position = Vector2(-315, 491)
 
 [node name="Player" parent="." index="7"]
 z_index = 10

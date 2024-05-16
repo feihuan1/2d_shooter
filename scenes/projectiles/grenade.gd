@@ -5,9 +5,16 @@ var speed = 750
 var explosion_active: bool = false
 var explosion_radius: int = 300
 
-func explode(): 
+func explode():  
+	$Explosion.show()
 	$AnimationPlayer.play("Explosion") 
 	explosion_active = true
+	linear_velocity = Vector2.ZERO
+	angular_velocity = 0
+
+func _ready():
+	$Sprite2D.show() 
+	$Explosion.hide()
 
 func _process(_delta): 
 	if explosion_active: 
