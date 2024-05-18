@@ -29,7 +29,6 @@ func _process(delta):
 				target.hit()
 
 func hit(): 
-	print(health)
 	if vulnerable: 
 		health -= 10 
 		vulnerable = false 
